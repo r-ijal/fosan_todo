@@ -1,0 +1,14 @@
+<html>
+    
+    <body>
+        <% if(pesan){%>
+            <h3><%= pesan%></h3>
+            <%}%>
+            <img src="/download.jpeg">
+        <form action="/user/login" method="POST">
+            <input type="text" name="username" placeholder="masukkan username">
+            <input type="password" name="password" placeholder="masukkan password">
+            <input type="submit" value="SIMPAN">
+        </form>
+    </body>
+</html>

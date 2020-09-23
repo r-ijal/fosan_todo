@@ -1,0 +1,24 @@
+<html>
+    <body>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>kegiatan</th>
+                    <th>status</th>
+                    <th>option</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i =0; i < response.length; i++){ %>
+                    <tr>
+                        <td><%= response[i].kegiatan%></td>
+                        <td><%= response[i].status%></td>
+                        <td><a href="/siswa/edit/<%= response[i].id%>">[EDIT]</a>
+                            <a href="/siswa/delete/<%= response[i].id%>">[HAPUS]</a></td>
+                    </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </body>
+</html>
