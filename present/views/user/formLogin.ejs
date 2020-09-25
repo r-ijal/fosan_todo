@@ -1,14 +1,94 @@
-<html>
-    
+<!-- <html>
     <body>
         <% if(pesan){%>
             <h3><%= pesan%></h3>
             <%}%>
             <img src="/download.jpeg">
         <form action="/user/login" method="POST">
-            <input type="text" name="username" placeholder="masukkan username">
-            <input type="password" name="password" placeholder="masukkan password">
-            <input type="submit" value="SIMPAN">
+            <input type="text" name="name" placeholder="input name">
+            <input type="password" name="password" placeholder="input password">
+            <input type="submit" value="SAVE">
         </form>
     </body>
+</html> -->
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Todo | Login</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="all">
+        <div class="header">
+
+
+
+            <div class="content">
+
+                <ul class="nav nav-pills">
+                    <li role="presentation"><a href="/user/register">Register</a></li>
+                    <li role="presentation" class="active"><a href="/user/login">Login</a></li>
+                </ul>
+
+                <div class="form-login">
+                    <div class="col-sm-12">
+                        <form action="/user/login" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" class="form-control"
+                                    placeholder="masukkan nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" class="form-control"
+                                    placeholder="Input Password">
+                            </div>
+                            <div class="signin-button">
+                                <a>
+                                    <!-- <button type="button" class="btn btn-default btn-lg btn-block">Sign in</button> -->
+                                    <button type="submit" class="btn btn-default navbar-btn ">Sign in</button>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+</body>
+
+<script>
+    <% if (pesan) {%>
+        alert('<%=pesan%>')
+        <%}%>
+</script>
+
 </html>

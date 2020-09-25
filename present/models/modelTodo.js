@@ -1,9 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/connections');
-const User = require('./user')
+const User = require('./modelUser')
 
 const Todo = sequelize.define('todolist', {
-
     id: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -12,11 +11,12 @@ const Todo = sequelize.define('todolist', {
     },
     kegiatan: {
         type: DataTypes.STRING
-
+        // allowNull: false
     },
     status : {
-        type: DataTypes.STRING
-
+        type: DataTypes.STRING,
+        defaultValue: 0
+        // allowNull: false
     }
 });
 

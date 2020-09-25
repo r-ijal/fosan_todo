@@ -1,6 +1,5 @@
 const { verifyToken } = require('../helpers/jwt')
-const  modelUser  = require('../models/user')
-
+const  modelUser  = require('../models/modelUser')
 
 function authentification(req, res, next){
     //  console.log(req.session)

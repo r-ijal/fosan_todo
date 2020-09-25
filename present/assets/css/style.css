@@ -1,0 +1,263 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/* font-size: 100%; */
+	/* font: inherit; */
+	/* vertical-align: baseline; */
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.all{
+    background-color: rgb(10, 10, 10);
+    /* background-color: azure; */
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+}
+
+.header{
+    width: 30%;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    /* padding: 10px; */
+}
+
+.content{
+    width: 80%;
+    height: 80%;
+    /* background-color: blueviolet; */
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.nav-pills{
+    width: 100%;
+    height: 20%;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-login{
+    width: 100%;
+    height: 60%;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+}
+
+.form-group label{
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+
+.signin-button{
+    width: 100%;
+    height: 20%;
+    /* background-color: rgb(42, 165, 48); */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.form-register{
+    width: 100%;
+    height: 60%;
+    /* background-color: brown; */
+    display: flex;
+    align-items: center;
+}
+
+.form-register .form-group label{
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.register-button{
+    width: 100%;
+    height: 20%;
+    /* background-color: rgb(42, 165, 48); */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.container-todo{
+    width: 90%;
+    height: 600px;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    /* padding: 10px; */
+}
+
+.container-todo .content{
+    width: 90%;
+    height: 90%;
+    /* background-color: blueviolet; */
+    /* margin: auto; */
+    display: flex;
+    flex-direction: column;
+}
+
+.title-todo{
+    width: 80%;
+    height: 15%;
+    /* position: fixed; */
+    /* background-color: chartreuse; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    /* overflow: hidden; */
+}
+
+.container-todo .row{
+    width: 80%;
+    height: 10%;
+    /* position: fixed; */
+    /* background-color: rgb(25, 0, 255); */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    width: 100%;
+    height: 70%;
+    /* background-color: brown; */
+    /* display: flex; */
+    /* position: relative; */
+    /* align-items: center; */
+
+    /* background-color: rgb(233, 233, 233); */
+    margin-left: 0px;
+    margin-right: 50px;
+    padding: 50px;
+    /* margin: 50px 50px 50px 350px; */
+    /* display: flex; */
+    /* flex-direction: column;
+    justify-content: center; */
+    overflow-y: auto;
+
+
+}
+
+.signout-button{
+    width: 98%;
+    height: 10%;
+    position: fixed;
+    /* background-color: rgb(42, 165, 48); */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    /* display: flex; */
+    /* margin: auto; */
+}
+
+.container-edit{
+    width: 50%;
+    height: 100%;
+    /* background-color: chocolate; */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-edit .content{
+    width: 90%;
+    height: 50%;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-edit .thead tr th{
+    background: #35A9DB;
+    color: #fff;
+    font-weight: normal;
+    line-height: 30px;
+    text-align: center;
+}
+
+.form-edit .tbody tr td{
+    padding: 8px 20px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 40px;
+}
