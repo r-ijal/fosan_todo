@@ -20,7 +20,6 @@ function authentification(req, res, next){
     }else{
         res.redirect('/user/login')
     }
- 
 }
 
 module.exports = authentification

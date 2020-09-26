@@ -46,13 +46,10 @@ class ControllerUser {
                 name: req.body.name
             }
         })
-
         if (data.length > 0) {
-
             if (compare(req.body.password, data[0].dataValues.password)) {
                 let token = generateToken(data[0].dataValues);
                 req.session.token = token;
-
                 req.session.save(function (err) {
                     if (!err) {
                         res.redirect('/todo')
@@ -62,7 +59,7 @@ class ControllerUser {
                 res.render('user/formLogin', { pesan: 'password anda salah' })
             }
         } else {
-            res.json({ pesan: 'anda tidak terdaftar' })
+            res.render('user/formLogin', { pesan: 'anda tidak terdaftar' })
         }
     }
 

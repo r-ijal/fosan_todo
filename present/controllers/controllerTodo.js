@@ -55,7 +55,7 @@ class ControllerTodo {
                 id: req.params.id
             }
         })
-        res.redirect('/todo');
+        res.redirect('/todo' );
     }
 }
 
