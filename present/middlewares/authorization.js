@@ -13,8 +13,9 @@ const modelTodo = require('../models/modelTodo')
 const authorization = (req, res, next) => {
     const { id } = req.params
     const decode = verifyToken(req.session.token)
+
     // console.log(id)
-    // console.log(decode.id)
+    // console.log(decode)
 
     modelTodo.findAll({
         where: {
@@ -25,11 +26,16 @@ const authorization = (req, res, next) => {
         .then(data => {
             // console.log(data)
             if (data.length > 0) {
-                return next()
+                next()
             } else {
                 res.json({ status: 403, pesan: 'ini bukan akun anda' })
-                // return res.redirect('/todo')
+                // res.redirect('/todo')
+                // res.redirect('/todo', { 
+                //         status: 403,
+                //         pesan: 'ini bukan todo anda'
+                //     })
                 // return res.redirect('/todo', { pesan: ' ini Bukan Akun Anda' })
+                // next({ status: 400, pesan: ' ini Bukan Akun Anda' })
             }
         })
         .catch(err => {

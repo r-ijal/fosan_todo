@@ -10,13 +10,13 @@ const Todo = sequelize.define('todolist', {
         autoIncrement: true
     },
     kegiatan: {
-        type: DataTypes.STRING
-        // allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false
     },
     status : {
         type: DataTypes.STRING,
-        defaultValue: 0
-        // allowNull: false
+        defaultValue: 0,
+        allowNull: false
     }
 });
 
