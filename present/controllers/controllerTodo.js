@@ -3,6 +3,7 @@ const ModelUser = require('../models/modelUser')
 const { verifyToken } = require('../helpers/jwt')
 
 class ControllerTodo {
+
     static list(req, res) {
         ModelTodo.findAll({
             include: {

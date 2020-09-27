@@ -3,6 +3,11 @@ const { generateToken } = require('../helpers/jwt')
 const ModelUser = require('../models/modelUser')
 
 class ControllerUser {
+
+    static welcome(req, res) {
+        res.render('welcome/welcome')
+    }
+
     static formRegister(req, res) {
         res.render('user/formRegister')
     }

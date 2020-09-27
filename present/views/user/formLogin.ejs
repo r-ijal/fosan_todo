@@ -83,12 +83,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
         crossorigin="anonymous"></script>
+
+    <h3>
+        < %
+        if (pesan) {
+            % >
+            <
+            h3 > < %= pesan % > < /h3> <
+                %
+        } % >
+    </h3>
+    
 </body>
 
-<script>
-    <% if (pesan) {
-        %> alert('<%=pesan%>') <%
-    } %>
-</script>
+
 
 </html>
