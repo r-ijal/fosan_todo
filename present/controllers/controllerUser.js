@@ -74,7 +74,7 @@ class ControllerUser {
                 console.log(err)
             }
         })
-        res.redirect('/user/login')
+        res.redirect('/')
     }
 }
 

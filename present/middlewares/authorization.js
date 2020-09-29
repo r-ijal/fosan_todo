@@ -28,12 +28,11 @@ const authorization = (req, res, next) => {
             if (data.length > 0) {
                 next()
             } else {
-                res.json({ status: 403, pesan: 'ini bukan akun anda' })
-                // res.redirect('/todo')
-                // res.redirect('/todo', { 
-                //         status: 403,
-                //         pesan: 'ini bukan todo anda'
-                //     })
+                // res.json({ status: 403, pesan: 'ini bukan akun anda' })
+                res.redirect('/todo')
+                // res.render('/todo', {
+                //     pesan: 'ini bukan todo anda'
+                // })
                 // return res.redirect('/todo', { pesan: ' ini Bukan Akun Anda' })
                 // next({ status: 400, pesan: ' ini Bukan Akun Anda' })
             }

@@ -1,14 +1,74 @@
 <html>
 
-    <body>
-        <form action="/todo/<%= data[0].id%>" method="POST">
-            <input type="text" name="kegiatan" value="<%= data[0].kegiatan%>">
-            <select name="status" id="">
-                <option value="0" <%= (data[0].status==0)? 'selected': ''%> >Belum</option>
-                <option value="1" <%= (data[0].status==0)? 'selected': ''%> >Sudah</option>
-            </select>
-            <input type="submit" value="SIMPAN">
-        </form>
-        
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>TodoMe | Edit</title>
+    <link rel="shortcut icon" href="/bitmap1.png">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+
+    <!-- <form action="/todo/<%= data[0].id%>" method="POST">
+        <input type="text" name="kegiatan" value="<%= data[0].kegiatan%>">
+        <select name="status" id="">
+            <option value="0" <%= (data[0].status==0)? 'selected': ''%>>Belum</option>
+            <option value="1" <%= (data[0].status==0)? 'selected': ''%>>Sudah</option>
+        </select>
+        <input type="submit" value="SIMPAN">
+    </form> -->
+
+    <div class="all-edit">
+        <div class="header">
+            <div class="content">
+                <div class="form-login">
+                    <div class="col-sm-12">
+                        <form action="/todo/<%= data[0].id%>" method="POST">
+                            <div class="form-group">
+                                <label for="name">Input Kegiatan</label>
+                                <input type="text" name="kegiatan" class="form-control" value="<%= data[0].kegiatan%>">
+                                <!-- <input type="text" id="name" name="name" class="form-control" placeholder="masukkan nama"> -->
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Status</label>
+                                <select name="status" style="width: 100px; height: 30px; cursor: pointer;" >
+                                    <option value="0" <%= (data[0].status==0)? 'selected': ''%>>Belum</option>
+                                    <option value="1" <%= (data[0].status==0)? 'selected': ''%>>Sudah</option>
+                                </select>
+                            </div>
+                            <div class="signin-button">
+                                <a>
+                                    <!-- <input type="submit" value="SIMPAN"> -->
+                                    <button type="submit" value="SIMPAN"
+                                        class="btn btn-default navbar-btn ">Simpan</button>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>

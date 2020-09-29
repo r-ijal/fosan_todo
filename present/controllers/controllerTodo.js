@@ -1,14 +1,19 @@
 const ModelTodo = require('../models/modelTodo')
 const ModelUser = require('../models/modelUser')
 const { verifyToken } = require('../helpers/jwt')
+const { token } = require('morgan')
 
 class ControllerTodo {
 
     static list(req, res) {
+        const decode = verifyToken(req.session.token)
         ModelTodo.findAll({
             include: {
                 model: ModelUser,
                 required: true
+            },
+            where: {
+                userlistId: decode.id
             }
 
         })

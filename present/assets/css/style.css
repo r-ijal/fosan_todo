@@ -47,8 +47,11 @@ body{
 }
 
 .all{
-    background-color: rgb(10, 10, 10);
+    /* background-color: rgb(10, 10, 10); */
     /* background-color: azure; */
+    background-image: url(../landscape.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -90,7 +93,7 @@ body{
 
 .form-login{
     width: 100%;
-    height: 60%;
+    height: 70%;
     /* background-color: brown; */
     display: flex;
     align-items: center;
@@ -99,6 +102,15 @@ body{
 .form-group label{
     margin-top: 10px;
     margin-bottom: 3px;
+}
+
+.form-group .fa-eye{
+    float: right; 
+    margin-right: 15px; 
+    margin-top: -25px; 
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
 }
 
 .signin-button{
@@ -112,7 +124,7 @@ body{
 
 .form-register{
     width: 100%;
-    height: 60%;
+    height: 80%;
     /* background-color: brown; */
     display: flex;
     align-items: center;
@@ -132,8 +144,21 @@ body{
     justify-content: center;
 }
 
+
+.all-todo{
+    /* background-color: rgb(10, 10, 10); */
+    /* background-color: azure; */
+    background-image: url(../landscape2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+}
+
 .container-todo{
-    width: 90%;
+    width: 80%;
     height: 600px;
     background-color: rgb(255, 255, 255);
     margin: auto;
@@ -162,7 +187,7 @@ body{
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     margin: auto;
 
     /* overflow: hidden; */
@@ -181,7 +206,7 @@ body{
 
 .todo-list{
     width: 100%;
-    height: 70%;
+    height: 60%;
     /* background-color: brown; */
     /* display: flex; */
     /* position: relative; */
@@ -190,15 +215,22 @@ body{
     /* background-color: rgb(233, 233, 233); */
     margin-left: 0px;
     margin-right: 50px;
-    padding: 50px;
+    padding: 20px 50px 50px 50px;
     /* margin: 50px 50px 50px 350px; */
     /* display: flex; */
     /* flex-direction: column;
     justify-content: center; */
     overflow-y: auto;
-
-
+    text-align: center;
 }
+
+.todo-list th {
+    text-align: center;
+}
+/* .todo-list td {
+    margin-top: 10px;
+    justify-content: center;
+} */
 
 .signout-button{
     width: 98%;
@@ -255,9 +287,55 @@ body{
     text-align: center;
 }
 
-.form-edit .tbody tr td{
+.todo-list .tbody{
     padding: 8px 20px;
     text-align: center;
     font-weight: normal;
-    line-height: 40px;
+    line-height: 10px;
+}
+
+.todo-list .tbody tr td{
+    padding: 8px 20px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 30px;
+}
+
+.tombol-edit-delete{
+    display: flex;
+    margin: auto;
+    width: 60%;
+    /* background-color: cornflowerblue; */
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.all-edit{
+    /* background-color: rgb(10, 10, 10); */
+    /* background-color: azure; */
+    background-image: url(../landscape3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+}
+
+.all-edit .form-login{
+    width: 100%;
+    height: 100%;
+    /* background-color: crimson; */
+}
+
+
+.all-edit .form-group{
+    /* /* width: 100%; */
+    /* height: 50%; */
+    /* background-color: cornflowerblue; */
+    margin-top: 30px;
+}
+
+.all-edit .signin-button{
+    margin-top: 50px;
 }

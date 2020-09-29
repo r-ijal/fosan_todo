@@ -1,38 +1,3 @@
-<!-- <html>
-<body>
-    <h1>TODO LIST</h1>
-    <form method="POST" action="/todo">
-        <input type="text" name="kegiatan" placeholder="masukkan kegiatan">
-        <input type="text" name="status" placeholder="masukkan status">
-        <input type="submit" value="SIMPAN">
-    </form>
-
-    <table>
-        <thead>
-            <tr>
-                <th>kegiatan</th>
-                <th>status</th>
-                <th>option</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% for(let i =0; i < response.length; i++){ %>
-            <tr>
-                <td><%= response[i].kegiatan%></td>
-                <td><%= response[i].status%></td>
-                <td>
-                    <a href="/todo/edittodo/<%= response[i].id%>">[EDIT]</a>
-                    <a href="/todo/delete/<%= response[i].id%>">[HAPUS]</a>
-                </td>
-            </tr>
-            <%}%>
-            </tbody>
-        </table>
-    </body>
-</html> -->
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -41,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Todo List</title>
+    <title>TodoMe | List</title>
+    <link rel="shortcut icon" href="/bitmap1.png">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -52,27 +18,28 @@
 </head>
 
 <body>
-    <div class="all">
+    <div class="all-todo">
         <div class="container-todo">
             <div class="content">
                 <div class="title-todo">
-                    <h1>Todo List</h1>
+                    <h1 style="font-weight: bolder;">Todo List</h1>
                 </div>
 
 
 
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="input-group">
-                            <form method="POST" action="/todo">
-                                <input type="text" name="kegiatan" class="form-control" placeholder="Input task name...">
+                        <form method="POST" action="/todo" name="input" onsubmit="return inputTask()">
+                            <div class="input-group">
+                                <input type="text" name="kegiatan" class="form-control"
+                                    placeholder="Input task name...">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit">Add Item</button>
                                 </span>
-                            </form>
 
-                            <!-- <input type="text" class="form-control" placeholder="Input task name..."> -->
-                        </div>
+                                <!-- <input type="text" class="form-control" placeholder="Input task name..."> -->
+                            </div>
+                        </form>
                     </div>
                 </div>
 
@@ -93,12 +60,18 @@
                                 <td><%= response[i].status==0? 'belum': 'sudah'%></td>
                                 <td><%= response[i].userlist.name%></td>
                                 <td>
-                                    
-                                    <button type="button" class="btn btn-warning">
-                                        <i class="fa fa-edit"></i>
-                                    </button>
-                                    <a href="/todo/edittodo/<%= response[i].id%>">[EDIT]</a>
-                                    <a href="/todo/delete/<%= response[i].id%>">[HAPUS]</a>
+                                    <div class="tombol-edit-delete">
+                                        <a href="/todo/edittodo/<%= response[i].id%>">
+                                            <button type="button" class="btn btn-warning">
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+                                        <a href="/todo/delete/<%= response[i].id%>">
+                                            <button type="button" class="btn btn-danger">
+                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                             <%}%>
@@ -124,6 +97,21 @@
         crossorigin="anonymous"></script>
 </body>
 
+
+
+
+
+<script>
+
+
+    function inputTask() {
+        const x = document.forms['input']['kegiatan'].value
+        if (x === '' || x === null) {
+            alert('silahkan input kegiatan')
+            return false
+        }
+    }
+</script>
 
 
 </html>

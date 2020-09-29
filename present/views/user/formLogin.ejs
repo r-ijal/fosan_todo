@@ -21,22 +21,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Todo | Login</title>
+    <title>TodoMe | Login</title>
+    <link rel="shortcut icon" href="/bitmap1.png">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css">
 </head>
 
 <body>
     <div class="all">
         <div class="header">
-
-
-
             <div class="content">
 
                 <ul class="nav nav-pills">
@@ -46,21 +44,22 @@
 
                 <div class="form-login">
                     <div class="col-sm-12">
-                        <form action="/user/login" method="POST">
+                        <form action="#" method="POST">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" class="form-control"
-                                    placeholder="masukkan nama">
+                                <label id="texth3" for="name">Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Input Name">
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" id="password" name="password" class="form-control"
                                     placeholder="Input Password">
+                                <span class="fa fa-eye" id="togglePassword"></span>
                             </div>
                             <div class="signin-button">
                                 <a>
                                     <!-- <button type="button" class="btn btn-default btn-lg btn-block">Sign in</button> -->
-                                    <button type="submit" class="btn btn-default navbar-btn ">Sign in</button>
+                                    <button type="submit" id='tombolSimpan' class="btn btn-default navbar-btn ">Log
+                                        in</button>
                                 </a>
                             </div>
                         </form>
@@ -79,10 +78,88 @@
         crossorigin="anonymous"></script>
 </body>
 
-<% if (pesan) {
-    <script>
-        %> alert('<%=pesan%>') <%
-    } %>
+<script>
+<% if (pesan) { %>
+        alert('<%=pesan%>')
+        <% } %>
 </script>
+
+<script>
+    const togglePassword = document.getElementById('togglePassword');
+    const password = document.getElementById('password');
+
+    togglePassword.addEventListener('click', function (e) {
+        // toggle the type attribute
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        // toggle the eye slash icon
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+<script>
+    // var a = 1;
+    // var b = 2;
+    // var c = a + b;
+    // console.log(c)
+
+    // $('#texth3').html('ganti isi')
+</script>
+
+
+<script>
+    // // cara traditional
+    // document.getElementById("tombolSimpan").addEventListener("click", function (event) {
+    //     event.preventDefault()
+    //     var xhttp = new XMLHttpRequest();
+    //     xhttp.onreadystatechange = function () {
+    //         if (this.readyState == 4 && this.status == 200) {
+    //             // console.log(this.responseText)
+    //             let p = JSON.parse(this.responseText)
+    //             if (p.status === 'berhasil') {
+    //                 window.location.href = "/todo/list";
+    //             } else {
+    //                 document.getElementById("texth3").innerHTML = p.status;
+    //             }
+    //         }
+    //     };
+
+    //     xhttp.open("POST", "/user/login", true);
+    //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //     xhttp.send(`name=${document.getElementById("name").value}&password=${document.getElementById("password").value}`);
+    // });
+</script>
+
+<script>
+    $('#tombolSimpan').click(function (e) {
+        e.preventDefault();
+        let p = {
+            name: $('#name').val(),
+            password: $('#password').val()
+        }
+    // })
+        $.post("/user/login", p, function (data) {
+            if (data.pesan === 'berhasil') {
+                window.location.href = "/todo/list";
+            } else {
+                let pen = $('#texth3').html();
+            }
+        })
+
+
+
+    // axios.post('/user/login', {
+    //     name: $('#name').val(),
+    //     password: $('#password').val()
+    // })
+    //     .then(function (response) {
+    //         console.log(response);
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     });
+
+</script>
+
 
 </html>
